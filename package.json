@@ -1,0 +1,25 @@
+{
+  "name": "ora",
+  "displayName": "ORA",
+  "description": "ORA Templating Language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "ora",
+      "aliases": ["ORA Templating Language", "ora"],
+      "extensions": [".ora"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "ora",
+      "scopeName": "source.ora",
+      "path": "./syntaxes/ora.tmLanguage.json"
+    }]
+  }
+}
