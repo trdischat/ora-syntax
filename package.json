@@ -1,6 +1,6 @@
 {
-  "name": "ora",
-  "displayName": "ORA",
+  "name": "ora-template",
+  "displayName": "Online Research Assistant",
   "description": "ORA Templating Language",
   "version": "0.0.1",
   "engines": {
@@ -11,13 +11,13 @@
   ],
   "contributes": {
     "languages": [{
-      "id": "ora",
-      "aliases": ["ORA Templating Language", "ora"],
-      "extensions": [".ora"],
+      "id": "ora-template",
+      "aliases": ["ORA Templating Language", "ora", "ORA"],
+      "extensions": [".ora-template"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
-      "language": "ora",
+      "language": "ora-template",
       "scopeName": "source.ora",
       "path": "./syntaxes/ora.tmLanguage.json"
     }]
