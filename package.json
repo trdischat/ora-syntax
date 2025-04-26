@@ -10,16 +10,26 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "ora-template",
-      "aliases": ["ORA Templating Language", "ora", "ORA"],
-      "extensions": [".ora-template"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "ora-template",
-      "scopeName": "source.ora",
-      "path": "./syntaxes/ora.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "ora-template",
+        "aliases": [
+          "ORA Templating Language",
+          "ora",
+          "ORA"
+        ],
+        "extensions": [
+          ".ora-template"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ora-template",
+        "scopeName": "source.ora",
+        "path": "./syntaxes/ora.tmLanguage.json"
+      }
+    ]
   }
 }
