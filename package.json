@@ -9,6 +9,10 @@
   "categories": [
     "Programming Languages"
   ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onLanguage:ora-template"
+  ],
   "contributes": {
     "languages": [
       {
