@@ -12,22 +12,53 @@
       "match": "\\\\[<#>\\/\\\\]"
     },
     {
-      "include": "#multitest"
-    },
-    {
-      "include": "#compare"
-    },
-    {
-      "include": "#assign"
-    },
-    {
-      "include": "#field"
-    },
-    {
-      "include": "#conditions"
+      "include": "#component"
     }
   ],
   "repository": {
+    "component": {
+      "patterns": [
+        {
+          "include": "#multitest"
+        },
+        {
+          "include": "#compare"
+        },
+        {
+          "include": "#assign"
+        },
+        {
+          "include": "#lookback"
+        },
+        {
+          "include": "#field"
+        },
+        {
+          "include": "#conditional"
+        }
+      ]
+    },
+    "conditional": {
+      "begin": "<",
+      "end": ">",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.conditional.ora"
+        }
+      },
+      "endCaptures": {
+        "0": {
+          "name": "keyword.conditional.ora"
+        }
+      },
+      "patterns": [
+        { "include": "#component"},
+        {
+          "match": "\\|",
+          "name": "keyword.conditional.ora"
+        }
+      ]
+    },
     "multitest": {
       "name": "multitest.ora",
       "begin": "\\[(\\?\\?)\\:",
@@ -58,7 +89,6 @@
           "match": "(?<=\\?\\:)[^=:<!>\\/\\]]+",
           "name": "variable.ora"
         },
-        { "include": "#field"},
         {
           "match": "\\/[^\\/]+\\/",
           "name": "string.regexp.ora"
@@ -66,7 +96,8 @@
         {
           "match": "[=!<>]{1,3}",
           "name": "keyword.operator.ora"
-        }
+        },
+        { "include": "#component"}
       ]
     },
     "assign": {
@@ -83,31 +114,44 @@
           "match": "(?<=\\=\\:)[^=:<!>\\/\\]]+",
           "name": "variable.ora"
         },
-        { "include": "#field"}
+        { "include": "#component"}
+      ]
+    },
+    "lookback": {
+      "name": "lookback.ora",
+      "begin": "\\[([\\+\\-])\\:",
+      "end": "\\]",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.operator.ora"
+        }
+      },
+      "patterns": [
+        { "include": "#component"}
       ]
     },
     "field": {
       "name": "field.ora",
-      "begin": "\\[",
+      "begin": "\\[(?=[^=:<!>\\/\\]])",
       "end": "\\]",
       "patterns": [
         {
           "match": "(?<=\\[)[^=:<!>\\/\\]]+",
           "name": "variable.ora"
         },
-        { "include": "#field"},
         {
           "include": "#ORATransforms"
         },
+        {
+          "match": "(?<=(?:extract|extractIndex|replace)\\:)[^:]+",
+          "name": "variable.parameter.ora"
+        },
+        { "include": "#component"},
         {
           "match": "(?<=\\:)[^:\\]]+",
           "name": "variable.parameter.ora"
         }
       ]
-    },
-    "conditions": {
-      "match": "[><]",
-      "name": "keyword.ora"
     },
     "ORATransforms": {
       "name": "support.function.transform.ora",
