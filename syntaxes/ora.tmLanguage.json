@@ -143,8 +143,7 @@
           "include": "#ORATransforms"
         },
         {
-          "match": "(?<=(?:extract|extractIndex|replace)\\:)[^:]+",
-          "name": "variable.parameter.ora"
+          "include": "#regexParams"
         },
         { "include": "#component"},
         {
@@ -152,6 +151,32 @@
           "name": "variable.parameter.ora"
         }
       ]
+    },
+    "regexParams": {
+      "begin": "(?<=(?:extract|extractIndex|replace))\\:",
+      "end": "[\\:\\]]",
+      "patterns": [
+        {
+          "match": "\\(\\?\\:",
+          "name": "string.regexp.ora"
+        },
+        {
+          "match": "[^\\[\\]\\:]+",
+          "name": "string.regexp.ora"
+        },
+        { "include": "#regexSet" }
+      ]
+    },
+    "regexSet": {
+        "begin": "\\[",
+        "end": "\\]",
+        "patterns": [
+          {
+            "match": "[^\\[\\]]+"
+          },
+          { "include": "#regexSet"}
+        ],
+        "name": "string.regexp.ora"
     },
     "ORATransforms": {
       "name": "support.function.transform.ora",
