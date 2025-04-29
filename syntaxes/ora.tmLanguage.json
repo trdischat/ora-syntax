@@ -21,8 +21,13 @@
         { "include": "#assign" },
         { "include": "#lookback" },
         { "include": "#field" },
-        { "include": "#conditional" }
+        { "include": "#conditional" },
+        { "include": "#control" }
       ]
+    },
+    "control": {
+      "match": "\\{[\\w\\:\\+\\*-=]+\\}",
+      "name": "string.control.ora"
     },
     "conditional": {
       "begin": "<",
@@ -130,7 +135,7 @@
         { "include": "#component"},
         {
           "match": "(?<=\\:)[^:\\]]+",
-          "name": "variable.parameter.ora"
+          "name": "string.parameter.ora"
         }
       ]
     },
