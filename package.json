@@ -1,13 +1,29 @@
 {
   "name": "ora-template",
   "displayName": "Online Research Assistant",
-  "description": "ORA Templating Language",
+  "description": "Language support for templating in the Online Research Assistant (ORA)",
   "version": "0.0.1",
+  "publisher": "trdischat",
+  "license": "./LICENSE.md",
+  "icon": "./images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trdischat/ora-syntax"
+  },
+  "homepage": "https://github.com/trdischat/ora-syntax",
+  "bugs": {
+    "url": "https://github.com/trdischat/ora-syntax/issues"
+  },
   "engines": {
     "vscode": "^1.99.0"
   },
   "categories": [
     "Programming Languages"
+  ],
+  "keywords": [
+    "ora",
+    "template",
+    "genealogy"
   ],
   "main": "./extension.js",
   "activationEvents": [
@@ -18,9 +34,7 @@
       {
         "id": "ora-template",
         "aliases": [
-          "ORA Templating Language",
-          "ora",
-          "ORA"
+          "ORA Templating"
         ],
         "extensions": [
           ".ora-template"
@@ -31,7 +45,7 @@
     "grammars": [
       {
         "language": "ora-template",
-        "scopeName": "source.ora",
+        "scopeName": "source.ora-template",
         "path": "./syntaxes/ora.tmLanguage.json"
       }
     ]
