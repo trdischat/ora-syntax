@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "publisher": "trdischat",
   "license": "./LICENSE.md",
-  "icon": "./images/icon.png",
+  "icon": "images/icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/trdischat/ora-syntax"
