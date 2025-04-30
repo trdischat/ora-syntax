@@ -3,19 +3,19 @@
   "name": "ORA Templating Language",
   "scopeName": "source.ora",
   "patterns": [
-    {
-      "name": "comment.line.number-sign.ora",
-      "match": "^#.*$"
-    },
-    {
-      "name": "constant.character.escape.ora",
-      "match": "\\\\[<#>\\/\\\\]"
-    },
     { "include": "#component" }
   ],
   "repository": {
     "component": {
       "patterns": [
+        {
+          "name": "comment.line.number-sign.ora",
+          "match": "^#.*$"
+        },
+        {
+          "name": "constant.character.escape.ora",
+          "match": "\\\\[<#>\\[\\]\\/\\\\]"
+        },
         { "include": "#multitest" },
         { "include": "#compare" },
         { "include": "#assign" },
