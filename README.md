@@ -33,7 +33,7 @@ There are no native settings for this extension. However, you can customize the 
 "editor.tokenColorCustomizations": {
   "textMateRules": [
     {
-      "scope": "variable.ora",
+      "scope": "variable.ora-template",
       "settings": {
         "fontStyle": "bold"
       }
@@ -42,7 +42,7 @@ There are no native settings for this extension. However, you can customize the 
   "[*Light*]": {
     "textMateRules": [
       {
-        "scope": "string.parameter.ora",
+        "scope": "string.parameter.ora-template",
         "settings": {
           "foreground": "#1A4F8C"
         }
@@ -52,7 +52,7 @@ There are no native settings for this extension. However, you can customize the 
   "[*Dark*]": {
     "textMateRules": [
       {
-        "scope": "string.parameter.ora",
+        "scope": "string.parameter.ora-template",
         "settings": {
           "foreground": "#66A0C8"
         }
@@ -66,15 +66,15 @@ These are the ORA elements that you can customize:
 
 | ORA element scope | Description | Example |
 | --- | --- | --- |
-| `comment.line.number-sign.ora` | Comment line | `# I am a comment` |
-| `constant.character.escape.ora` | Escape character | `\# I am not a comment` |
-| `keyword.operator.ora` | Value test or assignment operator | `? ! = < > + -` |
-| `keyword.conditional.ora` | Conditional expression separators | `< \| >` |
-| `variable.ora` | Field name | `Source.ID` |
-| `support.function.ora` | Transform name | `placeCity` |
-| `string.parameter.ora` | Transform parameter | `birth-date` |
-| `string.regexp.ora` | Regular expression string | `/\d+/` |
-| `string.control.ora` | Auto type control sequence | `{TARGET=none}` |
+| `comment.line.number-sign.ora-template` | Comment line | `# I am a comment` |
+| `constant.character.escape.ora-template` | Escape character | `\# I am not a comment` |
+| `keyword.operator.ora-template` | Value test or assignment operator | `? ! = < > + -` |
+| `keyword.conditional.ora-template` | Conditional expression separators | `< \| >` |
+| `variable.ora-template` | Field name | `Source.ID` |
+| `support.function.ora-template` | Transform name | `placeCity` |
+| `string.parameter.ora-template` | Transform parameter | `birth-date` |
+| `string.regexp.ora-template` | Regular expression string | `/\d+/` |
+| `string.control.ora-template` | Auto type control sequence | `{TARGET=none}` |
 
 ## Contributing
 
