@@ -166,7 +166,7 @@
         "name": "string.regexp.ora"
     },
     "ORATransforms": {
-      "name": "support.function.transform.ora",
+      "name": "support.function.ora",
       "match": "(?<=\\:)(?:age|ageDays|ageMonths|ageYears|date|dateAdd|dateDay|dateDifference|dateGtoJ|dateJtoG|dateJNYD|dateMDSwap|dateModifier|dateMonth|dateMonthAbbr|dateMonthName|dateQuarter|dateSubtract|dateYear|dayOfWeek|dateFrench|dateGerman|dateItalian|dateSpanish|attribute|query|queryInner|queryValue|capitalize|initialCapital|isLowerCase|isMixedCase|isUpperCase|lowercase|uppercase|mathAbs|mathAdd|mathCeiling|mathDivide|mathFloor|mathMultiply|mathRound|mathSubtract|namePrefix|namePrefixRaw|nameGiven|nameGivenRaw|nameSurname|nameSurnameRaw|nameSuffix|nameSuffixRaw|nameToGivenFirst|placeDetail|placeCity|placeCounty|placeDistrict|placeState|placeProvince|placeCountry|placePostalCode|placeHasDetail|placeHasCity|placeHasCounty|placeHasDistrict|placeHasState|placeHasProvince|placeHasCountry|placeHasPostalCode|placeAddCountry|placeLocale|abbr|abbrSplit|full|fullSplit|lookup|lookupSplit|append|extract|extractIndex|hrefToUrl|initials|length|numberToWords|padLeft|padRight|plural|prepend|replace|reverse|split|splitCount|splitLines|splitLinesCount|substring|urlParameter)\\b"
     }
   }
