@@ -16,6 +16,8 @@
           "name": "constant.character.escape.ora-template",
           "match": "\\\\[<#>\\[\\]\\/\\\\]"
         },
+        { "include": "#libraryConditional" },
+        { "include": "#libraryParameter" },
         { "include": "#multitest" },
         { "include": "#compare" },
         { "include": "#assign" },
@@ -23,6 +25,40 @@
         { "include": "#field" },
         { "include": "#conditional" },
         { "include": "#control" }
+      ]
+    },
+    "libraryParameter": {
+      "name": "libraryParameter.ora-template",
+      "begin": "\\{(\\d+)\\:?",
+      "end": "\\}",
+      "beginCaptures": {
+        "1": {
+          "name": "variable.ora-template"
+        }
+      },
+      "patterns": [
+        { "include": "#component" },
+        {
+          "match": "(?<=\\{\\d+\\:)[^\\}]+",
+          "name": "string.parameter.ora-template"
+        }
+      ]
+    },
+    "libraryConditional": {
+      "name": "libraryConditional.ora-template",
+      "begin": "\\{\\{(\\d+)\\:",
+      "end": "\\}\\}",
+      "beginCaptures": {
+        "1": {
+          "name": "variable.ora-template"
+        }
+      },
+      "patterns": [
+        { "include": "#component" },
+        {
+          "match": "(?<=\\{\\d+\\:)[^\\}]+",
+          "name": "string.parameter.ora-template"
+        }
       ]
     },
     "control": {
@@ -61,7 +97,7 @@
       },
       "patterns": [
         {
-          "match": "[^=:<!>\\/\\]]+",
+          "match": "[^=:<!>\\{\\}\\/\\]]+",
           "name": "variable.ora-template"
         }
       ]
@@ -77,7 +113,7 @@
       },
       "patterns": [
         {
-          "match": "(?<=\\?\\:)[^=:<!>\\/\\]]+",
+          "match": "(?<=\\?\\:)[^=:<!>\\{\\}\\/\\]]+",
           "name": "variable.ora-template"
         },
         {
@@ -102,7 +138,7 @@
       },
       "patterns": [
         {
-          "match": "(?<=\\=\\:)[^=:<!>\\/\\]]+",
+          "match": "(?<=\\=\\:)[^=:<!>\\{\\}\\/\\]]+",
           "name": "variable.ora-template"
         },
         { "include": "#component" }
@@ -131,7 +167,7 @@
           "name": "keyword.operator.ora-template"
         },
         {
-          "match": "(?<=\\[\\^?)[^=:<!>\\/\\]]+",
+          "match": "(?<=\\[\\^?)[^=:<!>\\{\\}\\/\\]]+",
           "name": "variable.ora-template"
         },
         { "include": "#ORATransforms" },
