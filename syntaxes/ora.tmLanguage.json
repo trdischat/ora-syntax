@@ -127,7 +127,11 @@
       "end": "\\]",
       "patterns": [
         {
-          "match": "(?<=\\[)[^=:<!>\\/\\]]+",
+          "match": "(?<=\\[)\\^",
+          "name": "keyword.operator.ora-template"
+        },
+        {
+          "match": "(?<=\\[\\^?)[^=:<!>\\/\\]]+",
           "name": "variable.ora-template"
         },
         { "include": "#ORATransforms" },
