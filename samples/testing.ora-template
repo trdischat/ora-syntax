@@ -1,0 +1,79 @@
+# Collection of sample template code for testing the extension.
+
+# This is a comment.
+\# This is not a comment because it is preceded by an escape character.
+
+Plain text using escape characters to include html tags.\<br\>\<i\>This will display as a second line in italics\<\/i\>
+
+# Basic field names
+
+[Field Name]
+[Source.Field Name]
+[var.Field Name]
+[lib.Field Name]
+[o.Field Name]
+[^Field Name]
+
+# Field names with Transforms
+
+[Field Name:replace:_:, ]
+[Field Name:placeCity:capitalize]
+[Field Name:padLeft:4:0:prepend:$]
+[Field Name:append:[ParamField]]
+[Death Date:age:[Birth Date:date:5d]]
+
+# Value Tests
+
+[?:Field Name]
+[??:Field Name:Field Two]
+[?:Field Name=Value]
+[?:Field Name==Value]
+[?:Field Name!=Value]
+[?:Field Name!==Value]
+[?:Field Name>Value]
+[?:Field Name>=Value]
+[?:Field Name<Value]
+[?:Field Name<=Value]
+[?:Field Name/Regex/]
+[?:Field Name/Regex/ ]
+[?:Field Name=[Value Field:dateMonth:County]]
+[+:][+:, ][+:[Field:date:yyyymmdd]]
+[-:][-:, ][-:[Field:date:yyyymmdd]]
+
+# Assignments
+
+[=:Field Name:Value]
+[==:Field Name:Value]
+[==:Field Name:[Value Field:append:County]]
+
+# Conditional Expressions
+
+<Some text [Field Name]>
+<Place:< [City]>< [State]>>
+<Place:< [City], [State]| [City]| [State]>>
+<[?:Field Name]True|False>
+<[?:Field Name=Value]True|False>
+<[?:Field Name/Regex/]True|False>
+[Field Name:date:<[?:Field Name=Value]something goes here>]
+
+# Library template parameters and conditional expressions
+
+{1}
+{1:test}
+[{1:test}]
+
+<
+{{2:<[{2}]>}}
+{{3:<[+:{1:, }][{3}]>}}
+{{4:<[+:{1:, }][{4}]>}}
+{{5:<[+:{1:, }][{5}]>}}
+{{6:<[+:{1:, }][{6}]>}}
+{{7:<[+:{1:, }][{7}]>}}
+>
+{{2:test}}
+
+# Auto type template control sequences
+
+{TARGET=none}
+<{Left}|{Right}>
+
