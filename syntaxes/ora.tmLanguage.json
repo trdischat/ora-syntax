@@ -27,9 +27,23 @@
         { "include": "#control" }
       ]
     },
+    "oraParameter": {
+      "name": "oraparameter.ora-template",
+      "patterns": [
+        {
+          "match": "(?<=\\:)[^\\[\\<\\{\\:\\]\\>\\}]+",
+          "name": "string.parameter.ora-template"
+        },
+        { "include": "#component"},
+        {
+          "match": "[^\\[\\<\\{\\:\\]\\>\\}]+",
+          "name": "string.parameter.ora-template"
+        }
+      ]
+    },
     "libraryParameter": {
       "name": "libraryParameter.ora-template",
-      "begin": "\\{(\\d+)\\:?",
+      "begin": "\\{(\\d+)\\:?(?=[\\:\\}])",
       "end": "\\}",
       "beginCaptures": {
         "1": {
@@ -37,11 +51,7 @@
         }
       },
       "patterns": [
-        { "include": "#component" },
-        {
-          "match": "(?<=\\{\\d+\\:)[^\\}]+",
-          "name": "string.parameter.ora-template"
-        }
+        { "include": "#oraParameter" }
       ]
     },
     "libraryConditional": {
@@ -54,11 +64,7 @@
         }
       },
       "patterns": [
-        { "include": "#component" },
-        {
-          "match": "(?<=\\{\\d+\\:)[^\\}]+",
-          "name": "string.parameter.ora-template"
-        }
+        { "include": "#oraParameter" }
       ]
     },
     "control": {
@@ -172,11 +178,7 @@
         },
         { "include": "#ORATransforms" },
         { "include": "#regexParams" },
-        { "include": "#component"},
-        {
-          "match": "(?<=\\:)[^:\\]]+",
-          "name": "string.parameter.ora-template"
-        }
+        { "include": "#oraParameter" }
       ]
     },
     "regexParams": {
