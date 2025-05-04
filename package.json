@@ -2,7 +2,7 @@
   "name": "ora-template",
   "displayName": "Online Repository Assistant",
   "description": "Language support for templating in the Online Repository Assistant (ORA)",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "trdischat",
   "license": "./LICENSE.md",
   "icon": "images/icon.png",
