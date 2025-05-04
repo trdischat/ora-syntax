@@ -9,11 +9,11 @@ This is an unofficial language extension to facilitate the development of templa
 
 ## Installation
 
-When released, this extension will be available on the [VS Code Extension Marketplace](https://marketplace.visualstudio.com/items?itemName=trdishat.ora-syntax).
+This extension can be installed from the [VS Code Extension Marketplace](https://marketplace.visualstudio.com/items?itemName=trdischat.ora-template) or downloaded from the [GitHub](https://github.com/trdischat/ora-syntax) repository.
 
 ## Usage
 
-The primary use case for this tool is editing the template text as it appears in the OraSettings page. The language extension is not designed to directly edit exported Collections or Library Templates, as those are JSON files. To use this extension, copy the text of a template from the OraSettings page into a new text file in your VS Code workspace and use the `.ora-template` file extension when naming the file. The file type should be detected and the template text will be highlighted as you edit it.
+The primary use case for this tool is editing the template text as it appears in the [OraSettings](https://ora-extension.com/en/ora-settings.htm) page. The language extension is not designed to edit exported Collections or Library Templates directly, as those are JSON files. To use this extension, copy the text of a template from the OraSettings page into a new text file in your VS Code workspace and use the `.ora-template` file extension when naming the file. The file type should be detected and the template text will be highlighted as you edit it.
 
 ### Syntax Highlighting
 
@@ -29,7 +29,7 @@ Display the full command syntax for an ORA transform, complete with parameters, 
 
 ### Examples
 
-Sample templates used for testing the extension are available in the the [GitHub repository](https://github.com/trdischat/ora-syntax/tree/master/samples).
+Sample templates used for testing the extension are available in the [GitHub repository](https://github.com/trdischat/ora-syntax/tree/master/samples).
 
 ## Configuration
 
@@ -84,7 +84,7 @@ These are the ORA elements that you can customize:
 
 ## Contributing
 
-The source code for this extension is hosted on [GitHub](https://github.com/trdischat/ora-syntax). Contributions, pull requests, suggestions, and bug reports are greatly appreciated. Post any issues or suggestions on the [github issues page](https://github.com/trdischat/ora-syntax/issues). Add the feature request tag to any feature requests or suggestions. To contribute, fork the project and then create a pull request back to master. Please update the README if you make any noticeable feature changes.
+The source code for this extension is hosted on [GitHub](https://github.com/trdischat/ora-syntax). Contributions, pull requests, suggestions, and bug reports are greatly appreciated. Post any issues or suggestions on the [GitHub issues page](https://github.com/trdischat/ora-syntax/issues). Add the feature request tag to any feature requests or suggestions. To contribute, fork the project and then create a pull request back to master. Please update the README if you make any noticeable feature changes.
 
 ## Release Notes
 
@@ -92,6 +92,6 @@ Check the [CHANGELOG](https://github.com/trdischat/ora-syntax/blob/master/CHANGE
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/trdischat/ora-syntax/blob/master/LICENSE.md) file for details.
+See the [LICENSE](https://github.com/trdischat/ora-syntax/blob/master/LICENSE.md) file for details.
 
 ---
