@@ -1,11 +1,12 @@
 # Collection of sample template code for testing the extension.
+# Many of the examples below are derived from the ORA documentation at https://www.ora-extension.com/en/contents.htm.
 
 # This is a comment.
 \# This is not a comment because it is preceded by an escape character.
 
 Plain text using escape characters to include html tags.\<br\>\<i\>This will display as a second line in italics\<\/i\>
 
-# Basic field names
+# Basic variable references
 
 [Field Name]
 [Source.Field Name]
@@ -14,66 +15,69 @@ Plain text using escape characters to include html tags.\<br\>\<i\>This will dis
 [o.Field Name]
 [^Field Name]
 
-# Field names with Transforms
+# Variables with Transforms
 
 [Field Name:replace:_:, ]
-[Field Name:placeCity:capitalize]
+[Children:numberToWords:capitalize]
+[Residence:placeCity:capitalize]
 [Field Name:padLeft:4:0:prepend:$]
 [Field Name:append:[ParamField]]
 [Death Date:age:[Birth Date:date:5d]]
+[^Event Type:append: Date]
 
 # Value Tests
 
-[?:Field Name]
-[??:Field Name:Field Two]
-[?:Field Name=Value]
-[?:Field Name==Value]
-[?:Field Name!=Value]
-[?:Field Name!==Value]
-[?:Field Name>Value]
-[?:Field Name>=Value]
-[?:Field Name<Value]
-[?:Field Name<=Value]
-[?:Field Name/Regex/]
-[?:Field Name/Regex/ ]
-[?:Field Name=[Value Field:dateMonth:County]]
-[+:][+:, ][+:[Field:date:yyyymmdd]]
-[-:][-:, ][-:[Field:date:yyyymmdd]]
+[?:Name]
+[?:Name=Maureen]
+[?:Name==Maureen]
+[?:Name!=Maureen]
+[?:Name!==Maureen]
+[?:Age>5]
+[?:Agee>=5]
+[?:Age<5]
+[?:Age<=5]
+[?:Name/ma?c/]
+[?:Name/(Mc|Mac)/ ]
+[??:City:State]
+[?:Birth Date=[Death Date:dateYear]]
+[+:][+:, ][+:[:date:yyyymmdd]]
+[-:][-:, ][-:[Page.Access Date:date:d Mmm yyyy]]
 
 # Assignments
 
-[=:Field Name:Value]
-[==:Field Name:Value]
+[=:Enum Year]
+[==:Enum Year]
+[=:Enum Year:]
+[==:Enum Year:]
+[=:Enum Year:1940]
+[==:Enum Year:1940]
+[==:Field Name:[Value Field]]
 [==:Field Name:[Value Field:append:County]]
 
 # Conditional Expressions
 
-<Some text [Field Name]>
+<; Date: [Date]>
 <Place:< [City]>< [State]>>
 <Place:< [City], [State]| [City]| [State]>>
 <[?:Field Name]True|False>
-<[?:Field Name=Value]True|False>
-<[?:Field Name/Regex/]True|False>
-[Field Name:date:<[?:Field Name=Value]something goes here>]
+<[?:Own or Rent=o]Owned|Rented>
+<[?:Own or Rent/^[o0]/]Owned|Rented>
+<Place:< [City]><<[?:City],> [State]>>
+<Place: <<[City]><[+:, ][County]><[+:, ][State]>>>
+[Event County:append: <[?:Event State=LA]Par|Co>.]
+<[?:City]|[=:City]>
 
 # Library template parameters and conditional expressions
 
 {1}
 {1:test}
-[{1:test}]
-
-<
-{{2:<[{2}]>}}
-{{3:<[+:{1:, }][{3}]>}}
-{{4:<[+:{1:, }][{4}]>}}
-{{5:<[+:{1:, }][{5}]>}}
-{{6:<[+:{1:, }][{6}]>}}
-{{7:<[+:{1:, }][{7}]>}}
->
-{{2:test}}
+{1:[Field Name]}
+{{1:test}}
+[{1}:split:,:2]
+<[?:{1}]<[?:{2}=LA][{1}] Parish|[{1}] County>>
 
 # Auto type template control sequences
 
 {TARGET=none}
-<{Left}|{Right}>
-
+{TARGET=none}[==:Source.ED]
+[Name]{TAB}[Cemetery Name]{TAB}[City]<, [County]><, [State]>{TAB}[Record ID]
